@@ -59,4 +59,4 @@ gem 'rack-cors'
 gem 'rspotify'
 
 gem 'omniauth-oauth2', '1.3.1'
-
+gem 'pg'
