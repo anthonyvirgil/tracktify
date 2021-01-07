@@ -1,0 +1,54 @@
+body {
+  background-color: #e7e7de;
+}
+
+.container {
+  text-align: center;
+}
+
+.tracktify-title {
+  font-size: 3em;
+}
+
+.tracktify-description {
+  font-size: 1em;
+}
+
+.trackt-buttons {
+  display:flex;
+  justify-content: center;
+}
+
+.trackt-button {
+  font-size: 1.5em;
+  background-color: #063B9E;
+  color: white;
+  padding: 15px 32px;
+  margin: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.trackt-button:hover {
+  background-color: #457DE5;
+}
+
+.trackt-button-clicked {
+  background-color: #001B4D;
+}
+
+.trackt-list-container {
+  display: flex;
+  justify-content: center;
+}
+
+.trackt-list-header {
+  text-align: center;
+}
+
+#last-month-trackt-div, #six-months-trackt-div, #all-time-trackt-div {
+  text-align: left;
+  font-size: 1.5em;
+  display: none;
+}

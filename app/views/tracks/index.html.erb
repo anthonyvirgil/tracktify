@@ -1,0 +1,31 @@
+<div class='container'>
+  <div class='title-header'>
+    <h1 class='tracktify-title'>Tracktify</h1>
+    <p class='tracktify-description'>Get Your Top 20 Spotify Trackt Songs</p>
+  </div>
+
+  <div class='trackt-buttons'>
+    <button id='last-month-button' class='trackt-button'>Last Month</button>
+    <button id='six-months-button'class='trackt-button'>Last 6 Months</button>
+    <button id='all-time-button' class='trackt-button'>All-Time</button>
+  </div>
+
+  <div class='trackt-list-container'>
+    <div id='last-month-trackt-div'>
+      <h3 class='trackt-list-header'>Last Month Trackt</h3>
+      <%= display_top_tracks(@top_tracks_one_month) %>
+    </div>
+
+    <div id='six-months-trackt-div'>
+      <h3 class='trackt-list-header'>Last 6 Months Trackt</h3>
+      <%= display_top_tracks(@top_tracks_six_months) %>
+    </div>
+
+    <div id='all-time-trackt-div'>
+      <h3 class='trackt-list-header'>All-Time Trackt</h3>
+      <%= display_top_tracks(@top_tracks_all_time) %>
+    </div>
+  </div>
+</div>
+
+<%= javascript_pack_tag 'tracks', 'data-turbolinks-track': 'reload' %>
