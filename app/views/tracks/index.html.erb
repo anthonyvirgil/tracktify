@@ -1,7 +1,7 @@
 <div class='container'>
   <div class='title-header'>
     <h1 class='tracktify-title'>Tracktify</h1>
-    <p class='tracktify-description'>Get Your Top 20 Spotify Trackt Songs</p>
+    <p class='tracktify-description'>Generate Your Top 10 Spotify Trackt List</p>
   </div>
 
   <div class='trackt-buttons'>
@@ -10,22 +10,69 @@
     <button id='all-time-button' class='trackt-button'>All-Time</button>
   </div>
 
-  <div class='trackt-list-container'>
+  <div class='trackt-lists-container'>
     <div id='last-month-trackt-div'>
-      <h3 class='trackt-list-header'>Last Month Trackt</h3>
-      <%= display_top_tracks(@top_tracks_one_month) %>
+      <div class='trackt-list-container'>
+        <div class='trackt-list-header'>
+          <p class='trackt-list-title'>Trackt List<p>
+          <p class='trackt-list-time-range'>One Month</p>
+        </div>
+        <% @top_tracks_one_month&.each_with_index do |track, index| %>
+          <div class='track-div'>
+            <% track_number = index > 8 ? "#{index + 1}" : "0#{index + 1}" %>
+            <p class='track-title'>
+              <span class='track-number'><%= track_number %></span> 
+              <strong><%= sanitize_track(track.name.upcase) %></strong>
+            </p>
+            <p class='track-artists'><%= track.artists.collect(&:name).join(", ") %></p>
+          </div>
+        <% end %>
+        <p class="credit">Created by @anthonyvirgil_</p>
+      </div>
     </div>
-
     <div id='six-months-trackt-div'>
-      <h3 class='trackt-list-header'>Last 6 Months Trackt</h3>
-      <%= display_top_tracks(@top_tracks_six_months) %>
+      <div class='trackt-list-container'>
+        <div class='trackt-list-header'>
+          <p class='trackt-list-title'>Trackt List<p>
+          <p class='trackt-list-time-range'>Six Months</p>
+        </div>
+        <% @top_tracks_six_months&.each_with_index do |track, index| %>
+          <div class='track-div'>
+            <% track_number = index > 8 ? "#{index + 1}" : "0#{index + 1}" %>
+            <p class='track-title'>
+              <span class='track-number'><%= track_number %></span> 
+              <strong><%= sanitize_track(track.name.upcase) %></strong>
+            </p>
+            <p class='track-artists'><%= track.artists.collect(&:name).join(", ") %></p>
+          </div>
+        <% end %>
+        <p class="credit">Created by @anthonyvirgil_</p>
+      </div>
     </div>
-
     <div id='all-time-trackt-div'>
-      <h3 class='trackt-list-header'>All-Time Trackt</h3>
-      <%= display_top_tracks(@top_tracks_all_time) %>
+      <div class='trackt-list-container'>
+        <div class='trackt-list-header'>
+          <p class='trackt-list-title'>Trackt List<p>
+          <p class='trackt-list-time-range'>All-Time</p>
+        </div>
+        <% @top_tracks_all_time&.each_with_index do |track, index| %>
+          <div class='track-div'>
+            <% track_number = index > 8 ? "#{index + 1}" : "0#{index + 1}" %>
+            <p class='track-title'>
+              <span class='track-number'><%= track_number %></span> 
+              <strong><%= sanitize_track(track.name.upcase) %></strong>
+            </p>
+            <p class='track-artists'><%= track.artists.collect(&:name).join(", ") %></p>
+          </div>
+        <% end %>
+        <p class="credit">Created by @anthonyvirgil_</p>
+      </div>
     </div>
   </div>
 </div>
+
+<footer class='footer'>
+  <p>Tracktify created by @anthonyvirgil_</p>
+</footer>
 
 <%= javascript_pack_tag 'tracks', 'data-turbolinks-track': 'reload' %>

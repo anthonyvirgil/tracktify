@@ -1,5 +1,19 @@
+html, body {
+  height: 100%;
+}
+
 body {
-  background-color: #e7e7de;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex-shrink: 0;
 }
 
 .container {
@@ -38,17 +52,75 @@ body {
   background-color: #001B4D;
 }
 
-.trackt-list-container {
+.trackt-lists-container {
+  margin: 50px;
   display: flex;
   justify-content: center;
 }
 
-.trackt-list-header {
-  text-align: center;
+#last-month-trackt-div, #six-months-trackt-div, #all-time-trackt-div {
+  display: none;
 }
 
-#last-month-trackt-div, #six-months-trackt-div, #all-time-trackt-div {
+.trackt-list-container {
+  width: 800px;
+  display: flex;
+  flex-wrap: wrap;
   text-align: left;
-  font-size: 1.5em;
-  display: none;
+  background-color: black;
+  color: white;
+  padding-top: 100px;
+
+  p {
+    font-family: 'Segoe UI', cursive;
+  }
+
+  .trackt-list-header {
+    width: 800px;
+    padding-bottom: 30px;
+    text-align: center;
+
+    .trackt-list-title {
+      margin-bottom: 0;
+      font-weight: bold;
+      font-size: 5em;
+    }
+
+    .trackt-list-time-range {
+      padding-top: 5px;
+      font-size: 1.5em;
+    }
+  }
+
+  .track-div {
+    text-align: center;
+    width: 400px;
+    padding: 10px 0 10px 0;
+  
+    .track-title {
+      font-size: 1.5em;
+      margin-bottom: 0;
+    }
+
+    .track-number {
+      // text-decoration: underline;
+    }
+
+    .track-artists {
+      margin-top: 5px;
+      font-size: 1em;
+    }
+  }
+
+  .credit {
+    color: #353535;
+    margin-top: 100px;
+    width: 800px;
+    text-align: right;
+    padding-right: 15px;
+  }
+}
+
+.footer {
+  text-align: center;
 }
