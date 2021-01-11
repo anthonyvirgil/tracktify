@@ -34,10 +34,10 @@ body {
 }
 
 .trackt-button {
-  font-size: 1.5em;
+  font-size: 1em;
   background-color: #063B9E;
   color: white;
-  padding: 15px 32px;
+  padding: 10px 25px;
   margin: 10px;
   border-radius: 10px;
   border: none;
@@ -63,32 +63,32 @@ body {
 }
 
 .trackt-list-container {
-  width: 800px;
+  width: 400px;
   display: flex;
   flex-wrap: wrap;
   text-align: left;
   background-color: black;
   color: white;
-  padding-top: 100px;
+  padding-top: 50px;
 
   p {
     font-family: 'Segoe UI', cursive;
   }
 
   .trackt-list-header {
-    width: 800px;
+    width: 400px;
     padding-bottom: 30px;
     text-align: center;
 
     .trackt-list-title {
       margin-bottom: 0;
       font-weight: bold;
-      font-size: 5em;
+      font-size: 4em;
     }
 
     .trackt-list-time-range {
       padding-top: 5px;
-      font-size: 1.5em;
+      font-size: 1.3em;
     }
   }
 
@@ -98,7 +98,7 @@ body {
     padding: 10px 0 10px 0;
   
     .track-title {
-      font-size: 1.5em;
+      font-size: 1.3em;
       margin-bottom: 0;
     }
 
@@ -114,8 +114,8 @@ body {
 
   .credit {
     color: #353535;
-    margin-top: 100px;
-    width: 800px;
+    margin-top: 50px;
+    width: 400px;
     text-align: right;
     padding-right: 15px;
   }
