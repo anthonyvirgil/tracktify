@@ -1,12 +1,32 @@
 <div class='container'>
   <div class='title-header'>
-    <h1 class='tracktify-title'>Tracktify</h1>
-    <p class='tracktify-description'>Get Your Spotify Trackt</p>
+    <h1 class='tracktify-title'>TRACKTIFY</h1>
   </div>
 
-  <%= button_to 'Sign in with Spotify', '/auth/spotify', { class: 'spotify-login-button' } %>
+  <%= button_to 'SIGN IN WITH SPOTIFY', '/auth/spotify', { class: 'trackt-button' } %>
 </div>
 
+  <div class='trackt-lists-container'>
+    <div id='test-trackt-div'>
+      <div class='trackt-list-container'>
+        <div class='trackt-list-header'>
+          <p class='trackt-list-title'>TRACKT LIST<p>
+          <p class='trackt-list-time-range'>ONE MONTH</p>
+        </div>
+        <% for index in 0..19 do %>
+          <div class='track-div'>
+            <% track_number = index > 8 ? "#{index + 1}" : "0#{index + 1}" %>
+            <p class='track-title'>
+              <span class='track-number'><%= track_number %></span> 
+              <strong>HOW YOU LIKE THAT</strong> - BLACKPINK
+            </p>
+          </div>
+        <% end %>
+        <p class="credit">CREATED BY @ANTHONYVIRGIL_</p>
+      </div>
+    </div>
+  </div>
+
 <footer class='footer'>
-  <p>Tracktify created by @anthonyvirgil_</p>
+  <p>TRACKTIFY APP CREATED BY @ANTHONYVIRGIL_</p>
 </footer>

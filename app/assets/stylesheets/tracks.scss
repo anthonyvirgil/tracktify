@@ -1,3 +1,5 @@
+$trackt-list-width: 700px;
+
 html, body {
   height: 100%;
 }
@@ -33,31 +35,34 @@ body, p {
 }
 
 .trackt-buttons {
-  display:flex;
+  display: flex;
   justify-content: center;
 }
 
 .trackt-button {
   font-size: 1em;
-  background-color: #063B9E;
+  background-color: black;
   color: white;
   padding: 10px 25px;
   margin: 10px;
-  border-radius: 10px;
-  border: none;
+  border: 1px solid black;
   outline: none;
 }
 
 .trackt-button:hover {
-  background-color: #457DE5;
+  background-color: white;
+  color: black;
+  border-color: black;
 }
 
 .trackt-button-clicked {
-  background-color: #001B4D;
+  background-color: white;
+  color: black;
+  border-color: black;
 }
 
 .trackt-lists-container {
-  margin: 50px;
+  margin: 25px;
   display: flex;
   justify-content: center;
 }
@@ -66,40 +71,43 @@ body, p {
   display: none;
 }
 
+#test-trackt-div {
+  display: none;
+}
+
 .trackt-list-container {
-  width: 400px;
+  width: $trackt-list-width;
   display: flex;
   flex-wrap: wrap;
   text-align: left;
   background-color: black;
   color: white;
-  padding-top: 50px;
+  padding-top: 10px;
 
   p {
     font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
   }
 
   .trackt-list-header {
-    width: 400px;
-    padding-bottom: 30px;
+    width: $trackt-list-width;
     text-align: center;
 
     .trackt-list-title {
       margin-bottom: 0;
       font-weight: bold;
-      font-size: 4em;
+      font-size: 3em;
     }
 
     .trackt-list-time-range {
-      padding-top: 5px;
       font-size: 1.3em;
     }
   }
 
   .track-div {
-    text-align: center;
-    width: 400px;
-    padding: 10px 0 10px 0;
+    text-align: left;
+    width: $trackt-list-width;
+    height: 30px;
+    padding: 0 0 0 30px;
   
     .track-title {
       font-size: 1.3em;
@@ -107,7 +115,7 @@ body, p {
     }
 
     .track-number {
-      // text-decoration: underline;
+      padding-right: 5px;
     }
 
     .track-artists {
@@ -116,12 +124,16 @@ body, p {
     }
   }
 
-  .credit {
-    color: #353535;
-    margin-top: 50px;
-    width: 400px;
-    text-align: right;
-    padding-right: 15px;
+  .trackt-list-footer {
+    margin-top: 25px;
+    width: $trackt-list-width;
+    display: flex;
+    padding: 0 30px 0 30px;
+    justify-content: space-between;
+
+    p {
+      color: white;
+    }
   }
 }
 

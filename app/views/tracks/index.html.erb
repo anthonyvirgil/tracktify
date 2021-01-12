@@ -1,78 +1,84 @@
 <div class='container'>
   <div class='title-header'>
-    <h1 class='tracktify-title'>Tracktify</h1>
-    <p class='tracktify-description'>Generate Your Top 10 Spotify Trackt List</p>
+    <h1 class='tracktify-title'>TRACKTIFY</h1>
+    <p class='tracktify-description'>GENERATE A TRACKT LIST OF YOUR TOP 20 SONGS ON SPOTIFY</p>
   </div>
 
   <div class='trackt-buttons'>
-    <button id='last-month-button' class='trackt-button'>Last Month</button>
-    <button id='six-months-button'class='trackt-button'>Last 6 Months</button>
-    <button id='all-time-button' class='trackt-button'>All-Time</button>
+    <button id='last-month-button' class='trackt-button'>LAST MONTH</button>
+    <button id='six-months-button'class='trackt-button'>LAST SIX MONTHS</button>
+    <button id='all-time-button' class='trackt-button'>ALL-TIME</button>
   </div>
 
   <div class='trackt-lists-container'>
     <div id='last-month-trackt-div'>
       <div class='trackt-list-container'>
         <div class='trackt-list-header'>
-          <p class='trackt-list-title'>Trackt List<p>
-          <p class='trackt-list-time-range'>One Month</p>
+          <p class='trackt-list-title'>SPOTIFY TRACKT LIST<p>
+          <p class='trackt-list-time-range'>LAST MONTH</p>
         </div>
         <% @top_tracks_one_month&.each_with_index do |track, index| %>
           <div class='track-div'>
             <% track_number = index > 8 ? "#{index + 1}" : "0#{index + 1}" %>
             <p class='track-title'>
               <span class='track-number'><%= track_number %></span> 
-              <strong><%= sanitize_track(track.name.upcase) %></strong>
+              <strong><%= sanitize_track(track.name.upcase) %></strong> - <%= track.artists.collect(&:name).map!(&:upcase).join(", ") %>
             </p>
-            <p class='track-artists'><%= track.artists.collect(&:name).join(", ") %></p>
           </div>
         <% end %>
-        <p class="credit">Created by @anthonyvirgil_</p>
+        <div class='trackt-list-footer'>
+          <p>TRACKTIFY.HEROKUAPP.COM</p>
+          <p>CREATED BY @ANTHONYVIRGIL_</p>
+        </div>
       </div>
     </div>
     <div id='six-months-trackt-div'>
       <div class='trackt-list-container'>
         <div class='trackt-list-header'>
-          <p class='trackt-list-title'>Trackt List<p>
-          <p class='trackt-list-time-range'>Six Months</p>
+          <p class='trackt-list-title'>SPOTIFY TRACKT LIST<p>
+          <p class='trackt-list-time-range'>LAST SIX MONTHS</p>
         </div>
         <% @top_tracks_six_months&.each_with_index do |track, index| %>
           <div class='track-div'>
             <% track_number = index > 8 ? "#{index + 1}" : "0#{index + 1}" %>
             <p class='track-title'>
               <span class='track-number'><%= track_number %></span> 
-              <strong><%= sanitize_track(track.name.upcase) %></strong>
+              <strong><%= sanitize_track(track.name.upcase) %></strong> - <%= track.artists.collect(&:name).map!(&:upcase).join(", ") %>
             </p>
-            <p class='track-artists'><%= track.artists.collect(&:name).join(", ") %></p>
           </div>
         <% end %>
-        <p class="credit">Created by @anthonyvirgil_</p>
+        <div class='trackt-list-footer'>
+          <p>TRACKTIFY.HEROKUAPP.COM</p>
+          <p>CREATED BY @ANTHONYVIRGIL_</p>
+        </div>
       </div>
     </div>
     <div id='all-time-trackt-div'>
       <div class='trackt-list-container'>
         <div class='trackt-list-header'>
-          <p class='trackt-list-title'>Trackt List<p>
-          <p class='trackt-list-time-range'>All-Time</p>
+          <p class='trackt-list-title'>SPOTIFY TRACKT LIST<p>
+          <p class='trackt-list-time-range'>ALL-TIME</p>
         </div>
         <% @top_tracks_all_time&.each_with_index do |track, index| %>
           <div class='track-div'>
             <% track_number = index > 8 ? "#{index + 1}" : "0#{index + 1}" %>
             <p class='track-title'>
               <span class='track-number'><%= track_number %></span> 
-              <strong><%= sanitize_track(track.name.upcase) %></strong>
+              <strong><%= sanitize_track(track.name.upcase) %></strong> - <%= track.artists.collect(&:name).map!(&:upcase).join(", ") %>
             </p>
-            <p class='track-artists'><%= track.artists.collect(&:name).join(", ") %></p>
           </div>
         <% end %>
-        <p class="credit">Created by @anthonyvirgil_</p>
+        <div class='trackt-list-footer'>
+          <p>TRACKTIFY.HEROKUAPP.COM</p>
+          <p>CREATED BY @ANTHONYVIRGIL_</p>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
 <footer class='footer'>
-  <p>Tracktify created by @anthonyvirgil_</p>
+  <p>TRACKTIFY APP CREATED BY @ANTHONYVIRGIL_</p>
 </footer>
 
 <%= javascript_pack_tag 'tracks', 'data-turbolinks-track': 'reload' %>
