@@ -1,4 +1,5 @@
 $trackt-list-width: 700px;
+$trackt-list-width-mobile: 400px;
 
 html, body {
   height: 100%;
@@ -117,11 +118,6 @@ body, p {
     .track-number {
       padding-right: 5px;
     }
-
-    .track-artists {
-      margin-top: 5px;
-      font-size: 1em;
-    }
   }
 
   .trackt-list-footer {
@@ -139,4 +135,38 @@ body, p {
 
 .footer {
   text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .trackt-list-container {
+    width: $trackt-list-width-mobile;
+
+    .trackt-list-header {
+      width: $trackt-list-width-mobile;
+
+      .trackt-list-title {
+        font-size: 2em;
+      }
+  
+      .trackt-list-time-range {
+        font-size: 1em;
+      }
+    }
+  
+    .track-div {
+      width: $trackt-list-width-mobile;
+
+      .track-title {
+        font-size: 1em;
+      }
+    }
+  
+    .trackt-list-footer {
+      width: $trackt-list-width-mobile;
+
+      p {
+        font-size: 0.8em;
+      }
+    }
+  }
 }
