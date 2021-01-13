@@ -1,0 +1,2 @@
+class Tracktlist < ApplicationRecord
+end

@@ -1,6 +1,6 @@
 require "test_helper"
 
-class TracksControllerTest < ActionDispatch::IntegrationTest
+class TracktlistsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @track = tracks(:one)
   end

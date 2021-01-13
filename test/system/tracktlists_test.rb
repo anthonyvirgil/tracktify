@@ -1,6 +1,6 @@
 require "application_system_test_case"
 
-class TracksTest < ApplicationSystemTestCase
+class TracktlistsTest < ApplicationSystemTestCase
   setup do
     @track = tracks(:one)
   end

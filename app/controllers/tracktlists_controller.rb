@@ -1,4 +1,4 @@
-class TracksController < ApplicationController
+class TracktlistsController < ApplicationController
   before_action :set_track, only: [:show, :edit, :update, :destroy]
 
   def index
