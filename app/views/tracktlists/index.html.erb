@@ -12,73 +12,33 @@
 
   <div class='trackt-lists-container'>
     <div id='last-month-trackt-div'>
-      <div class='trackt-list-container'>
-        <div class='trackt-list-header'>
-          <p class='trackt-list-title'>SPOTIFY TRACKT LIST<p>
-          <p class='trackt-list-time-range'>LAST MONTH</p>
-        </div>
-        <% @top_tracks_one_month&.each_with_index do |track, index| %>
-          <div class='track-div'>
-            <% track_number = index > 8 ? "#{index + 1}" : "0#{index + 1}" %>
-            <p class='track-title'>
-              <span class='track-number'><%= track_number %></span> 
-              <strong><%= sanitize_track(track.name.upcase) %></strong> - <%= track.artists.collect(&:name).map!(&:upcase).join(", ") %>
-            </p>
-          </div>
-        <% end %>
-        <div class='trackt-list-footer'>
-          <p>TRACKTIFY.HEROKUAPP.COM</p>
-          <p>CREATED BY @ANTHONYVIRGIL_</p>
-        </div>
-      </div>
+      <%= render :partial => 'trackt_list', 
+        locals: {
+          time_range_title: 'LAST MONTH',
+          top_tracks: @top_tracks_one_month,
+          debug: false,
+        } 
+      %>
     </div>
     <div id='six-months-trackt-div'>
-      <div class='trackt-list-container'>
-        <div class='trackt-list-header'>
-          <p class='trackt-list-title'>SPOTIFY TRACKT LIST<p>
-          <p class='trackt-list-time-range'>LAST SIX MONTHS</p>
-        </div>
-        <% @top_tracks_six_months&.each_with_index do |track, index| %>
-          <div class='track-div'>
-            <% track_number = index > 8 ? "#{index + 1}" : "0#{index + 1}" %>
-            <p class='track-title'>
-              <span class='track-number'><%= track_number %></span> 
-              <strong><%= sanitize_track(track.name.upcase) %></strong> - <%= track.artists.collect(&:name).map!(&:upcase).join(", ") %>
-            </p>
-          </div>
-        <% end %>
-        <div class='trackt-list-footer'>
-          <p>TRACKTIFY.HEROKUAPP.COM</p>
-          <p>CREATED BY @ANTHONYVIRGIL_</p>
-        </div>
-      </div>
+      <%= render :partial => 'trackt_list', 
+        locals: {
+          time_range_title: 'LAST SIX MONTHS',
+          top_tracks: @top_tracks_six_months,
+          debug: false,
+        } 
+      %>
     </div>
     <div id='all-time-trackt-div'>
-      <div class='trackt-list-container'>
-        <div class='trackt-list-header'>
-          <p class='trackt-list-title'>SPOTIFY TRACKT LIST<p>
-          <p class='trackt-list-time-range'>ALL-TIME</p>
-        </div>
-        <% @top_tracks_all_time&.each_with_index do |track, index| %>
-          <div class='track-div'>
-            <% track_number = index > 8 ? "#{index + 1}" : "0#{index + 1}" %>
-            <p class='track-title'>
-              <span class='track-number'><%= track_number %></span> 
-              <strong><%= sanitize_track(track.name.upcase) %></strong> - <%= track.artists.collect(&:name).map!(&:upcase).join(", ") %>
-            </p>
-          </div>
-        <% end %>
-        <div class='trackt-list-footer'>
-          <p>TRACKTIFY.HEROKUAPP.COM</p>
-          <p>CREATED BY @ANTHONYVIRGIL_</p>
-        </div>
-      </div>
+      <%= render :partial => 'trackt_list', 
+        locals: {
+          time_range_title: 'ALL-TIME',
+          top_tracks: @top_tracks_all_time,
+          debug: false,
+        } 
+      %>
     </div>
   </div>
 </div>
-
-<footer class='footer'>
-  <p>TRACKTIFY APP CREATED BY @ANTHONYVIRGIL_</p>
-</footer>
 
 <%= javascript_pack_tag 'tracktlists', 'data-turbolinks-track': 'reload' %>

@@ -1,0 +1,31 @@
+<div class='trackt-list-container'>
+  <div class='trackt-list-header'>
+    <p class='trackt-list-title'>SPOTIFY TRACKT LIST<p>
+    <p class='trackt-list-time-range'><%= time_range_title %></p>
+  </div>
+  <% if debug %>
+    <% for index in 0..19 %>
+      <div class='track-div'>
+        <% track_number = index > 8 ? "#{index + 1}" : "0#{index + 1}" %>
+        <p class='track-title'>
+          <span class='track-number'><%= track_number %></span> 
+          <strong>HOW YOU LIKE THAT</strong> - BLACKPINK
+        </p>
+      </div>
+    <% end %>
+  <% else %>
+    <% top_tracks&.each_with_index do |track, index| %>
+      <div class='track-div'>
+        <% track_number = index > 8 ? "#{index + 1}" : "0#{index + 1}" %>
+        <p class='track-title'>
+          <span class='track-number'><%= track_number %></span> 
+          <strong><%= sanitize_track(track.name.upcase) %></strong> - <%= track.artists.collect(&:name).map!(&:upcase).join(", ") %>
+        </p>
+      </div>
+    <% end %>
+  <% end %>
+  <div class='trackt-list-footer'>
+    <p>TRACKTIFY.HEROKUAPP.COM</p>
+    <p>CREATED BY @ANTHONYVIRGIL_</p>
+  </div>
+</div>

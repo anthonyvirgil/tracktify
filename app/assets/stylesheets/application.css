@@ -13,3 +13,63 @@
  *= require_tree .
  *= require_self
  */
+
+ html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+body, p {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  flex: 1 0 auto;
+  text-align: center;
+}
+
+.footer {
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.tracktify-title {
+  font-size: 3em;
+}
+
+.tracktify-description {
+  font-size: 1em;
+}
+
+.trackt-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.trackt-button {
+  font-size: 1em;
+  background-color: black;
+  color: white;
+  padding: 10px 25px;
+  margin: 10px;
+  border: 1px solid black;
+  outline: none;
+}
+
+.trackt-button:hover {
+  background-color: white;
+  color: black;
+  border-color: black;
+}
+
+.trackt-button-clicked {
+  background-color: white;
+  color: black;
+  border-color: black;
+}

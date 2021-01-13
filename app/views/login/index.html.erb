@@ -6,30 +6,14 @@
   <%= button_to 'SIGN IN WITH SPOTIFY', '/auth/spotify', { class: 'trackt-button' } %>
 </div>
 
-  <div class='trackt-lists-container'>
-    <div id='test-trackt-div'>
-      <div class='trackt-list-container'>
-        <div class='trackt-list-header'>
-          <p class='trackt-list-title'>TRACKT LIST<p>
-          <p class='trackt-list-time-range'>ONE MONTH</p>
-        </div>
-        <% for index in 0..19 do %>
-          <div class='track-div'>
-            <% track_number = index > 8 ? "#{index + 1}" : "0#{index + 1}" %>
-            <p class='track-title'>
-              <span class='track-number'><%= track_number %></span> 
-              <strong>HOW YOU LIKE THAT</strong> - BLACKPINK
-            </p>
-          </div>
-        <% end %>
-        <div class='trackt-list-footer'>
-          <p>TRACKTIFY.HEROKUAPP.COM</p>
-          <p>CREATED BY @ANTHONYVIRGIL_</p>
-        </div>
-      </div>
-    </div>
+<div class='trackt-lists-container'>
+  <div id='test-trackt-div'>
+    <%= render :partial => 'tracktlists/trackt_list', 
+      locals: {
+        time_range_title: 'TEST TIME RANGE',
+        top_tracks: nil,
+        debug: true,
+      } 
+    %>
   </div>
-
-<footer class='footer'>
-  <p>TRACKTIFY APP CREATED BY @ANTHONYVIRGIL_</p>
-</footer>
+</div>
