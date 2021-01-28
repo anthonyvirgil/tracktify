@@ -7,9 +7,16 @@
     <% for index in 0..19 %>
       <div class='track-div'>
         <% track_number = index > 8 ? "#{index + 1}" : "0#{index + 1}" %>
+        <% if track_number.to_i % 2 == 0 %>
+          <% track_title = 'CHAMPIONS' %>
+          <% track_artist = 'KANYE WEST, GUCCI MANE, BIG SEAN, 2 CHAINZ, TRAVIS SCOTT, YO GOTTI, QUAVO, DESIIGNER' %>
+        <% else %>
+          <% track_title = 'HOW YOU LIKE THAT' %>
+          <% track_artist = 'BLACKPINK' %>
+        <% end %>
         <p class='track-title'>
-          <span class='track-number'><%= track_number %></span> 
-          <strong>HOW YOU LIKE THAT</strong> - BLACKPINK
+          <span class='track-number'><%= track_number %></span>
+          <strong><%= track_title %></strong> - <%= track_artist %>
         </p>
       </div>
     <% end %>
@@ -17,9 +24,11 @@
     <% top_tracks&.each_with_index do |track, index| %>
       <div class='track-div'>
         <% track_number = index > 8 ? "#{index + 1}" : "0#{index + 1}" %>
+        <% track_title = sanitize_track(track.name.upcase) %>
+        <% track_artist = track.artists.collect(&:name).map!(&:upcase).join(", ") %>
         <p class='track-title'>
-          <span class='track-number'><%= track_number %></span> 
-          <strong><%= sanitize_track(track.name.upcase) %></strong> - <%= track.artists.collect(&:name).map!(&:upcase).join(", ") %>
+          <span class='track-number'><%= track_number %></span>
+          <strong><%= track_title %></strong> - <%= track_artist %>
         </p>
       </div>
     <% end %>
